@@ -1,0 +1,33 @@
+{
+  "name": "Bloco",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome do bloco (ex: Bloco Rio de Janeiro)"
+    },
+    "estado": {
+      "type": "string",
+      "description": "Estado principal do bloco"
+    },
+    "responsavel_principal": {
+      "type": "string"
+    },
+    "responsavel_email": {
+      "type": "string"
+    },
+    "responsavel_telefone": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "observacoes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "nome"
+  ]
+}
