@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './', 
+  // O GitHub Pages coloca seu site em uma subpasta com o nome do repositório
+  base: '/logistica/', 
 })
