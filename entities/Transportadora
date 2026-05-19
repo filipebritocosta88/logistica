@@ -1,0 +1,32 @@
+{
+  "name": "Transportadora",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "sedex",
+        "pac",
+        "uber_corporativo",
+        "motoboy_interno",
+        "easy_courier",
+        "transportadora",
+        "mercado_livre",
+        "outros"
+      ]
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "observacoes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "nome"
+  ]
+}
