@@ -1,0 +1,299 @@
+{
+  "name": "Solicitacao",
+  "type": "object",
+  "properties": {
+    "protocolo": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "envio_comum",
+        "logistica_reversa",
+        "coleta",
+        "envio_cliente",
+        "envio_influenciador",
+        "envio_interno_pdv",
+        "envio_loja_virtual",
+        "mercado_livre",
+        "call_center",
+        "adm",
+        "estoque"
+      ]
+    },
+    "prioridade": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "urgente",
+        "emergencial"
+      ],
+      "default": "normal"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "solicitacao_criada",
+        "processando",
+        "aguardando_postagem",
+        "postado",
+        "aguardando_analise",
+        "em_analise",
+        "aguardando_dados",
+        "aprovado_envio",
+        "envio_realizado",
+        "em_transporte",
+        "entregue",
+        "recebimento_confirmado",
+        "finalizado",
+        "cancelado",
+        "endereco_incorreto",
+        "aguardando_pagamento",
+        "aguardando_coleta",
+        "coleta_nao_realizada",
+        "extraviado",
+        "atrasado",
+        "devolvido_remetente"
+      ],
+      "default": "solicitacao_criada"
+    },
+    "setor_solicitante": {
+      "type": "string"
+    },
+    "responsavel_nome": {
+      "type": "string"
+    },
+    "responsavel_email": {
+      "type": "string"
+    },
+    "responsavel_telefone": {
+      "type": "string"
+    },
+    "responsavel_cpf": {
+      "type": "string"
+    },
+    "responsavel_id": {
+      "type": "string"
+    },
+    "origem_nome": {
+      "type": "string"
+    },
+    "origem_cidade": {
+      "type": "string"
+    },
+    "origem_estado": {
+      "type": "string"
+    },
+    "origem_endereco": {
+      "type": "string"
+    },
+    "origem_numero": {
+      "type": "string"
+    },
+    "origem_complemento": {
+      "type": "string"
+    },
+    "origem_bairro": {
+      "type": "string"
+    },
+    "origem_cep": {
+      "type": "string"
+    },
+    "origem_cpf": {
+      "type": "string"
+    },
+    "origem_telefone": {
+      "type": "string"
+    },
+    "origem_email": {
+      "type": "string"
+    },
+    "destino_nome": {
+      "type": "string"
+    },
+    "destino_cidade": {
+      "type": "string"
+    },
+    "destino_estado": {
+      "type": "string"
+    },
+    "destino_endereco": {
+      "type": "string"
+    },
+    "destino_numero": {
+      "type": "string"
+    },
+    "destino_complemento": {
+      "type": "string"
+    },
+    "destino_bairro": {
+      "type": "string"
+    },
+    "destino_cep": {
+      "type": "string"
+    },
+    "destino_cpf": {
+      "type": "string"
+    },
+    "destino_telefone": {
+      "type": "string"
+    },
+    "destino_email": {
+      "type": "string"
+    },
+    "descricao_item": {
+      "type": "string"
+    },
+    "categoria_envio": {
+      "type": "string",
+      "enum": [
+        "peca",
+        "produto",
+        "documento",
+        "equipamento",
+        "brinde",
+        "material_marketing",
+        "influenciador",
+        "garantia",
+        "devolucao",
+        "outros"
+      ]
+    },
+    "quantidade_volumes": {
+      "type": "number",
+      "default": 1
+    },
+    "peso_estimado": {
+      "type": "number"
+    },
+    "valor_declarado": {
+      "type": "number"
+    },
+    "necessita_nota_fiscal": {
+      "type": "boolean",
+      "default": false
+    },
+    "possui_bateria": {
+      "type": "boolean",
+      "default": false
+    },
+    "possui_item_fragil": {
+      "type": "boolean",
+      "default": false
+    },
+    "precisa_coleta": {
+      "type": "boolean",
+      "default": false
+    },
+    "observacoes_solicitante": {
+      "type": "string"
+    },
+    "modalidade_sugerida": {
+      "type": "string",
+      "enum": [
+        "SEDEX",
+        "PAC",
+        "OUTROS"
+      ]
+    },
+    "modalidade_confirmada": {
+      "type": "string",
+      "enum": [
+        "SEDEX",
+        "PAC",
+        "OUTROS"
+      ]
+    },
+    "transportadora_utilizada": {
+      "type": "string"
+    },
+    "codigo_rastreio": {
+      "type": "string"
+    },
+    "valor_custo": {
+      "type": "number"
+    },
+    "previsao_entrega": {
+      "type": "string",
+      "format": "date"
+    },
+    "data_envio": {
+      "type": "string",
+      "format": "date"
+    },
+    "comprovante_url": {
+      "type": "string"
+    },
+    "autorizacao_postagem": {
+      "type": "string",
+      "description": "Texto completo da autoriza\u00e7\u00e3o de postagem (Easy Courier/Correios) colado pela equipe log\u00edstica"
+    },
+    "observacao_interna": {
+      "type": "string"
+    },
+    "responsavel_atendimento": {
+      "type": "string"
+    },
+    "data_recebimento": {
+      "type": "string",
+      "format": "date"
+    },
+    "recebido_por": {
+      "type": "string"
+    },
+    "status_recebimento": {
+      "type": "string",
+      "enum": [
+        "recebido_corretamente",
+        "recebido_com_avaria",
+        "recebido_parcialmente",
+        "nao_recebido"
+      ]
+    },
+    "observacao_recebimento": {
+      "type": "string"
+    },
+    "comprovante_recebimento_url": {
+      "type": "string"
+    },
+    "historico": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "usuario": {
+            "type": "string"
+          },
+          "acao": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "influenciador_nome": {
+      "type": "string"
+    },
+    "influenciador_retorno_esperado": {
+      "type": "string"
+    },
+    "influenciador_retorno_obtido": {
+      "type": "string"
+    },
+    "valor_produto": {
+      "type": "number"
+    },
+    "bloco_id": {
+      "type": "string"
+    },
+    "pdv_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tipo",
+    "prioridade"
+  ]
+}
