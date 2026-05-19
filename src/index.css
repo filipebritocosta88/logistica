@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 28% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 235 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 15% 93%;
+    --secondary-foreground: 222 25% 20%;
+    --muted: 222 15% 94%;
+    --muted-foreground: 222 15% 50%;
+    --accent: 235 85% 97%;
+    --accent-foreground: 235 85% 40%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 18% 89%;
+    --input: 222 18% 89%;
+    --ring: 235 85% 60%;
+    --radius: 0.875rem;
+
+    /* Sidebar dark */
+    --sidebar-bg: 222 47% 9%;
+    --sidebar-text: 220 20% 70%;
+    --sidebar-accent: 235 85% 60%;
+    --sidebar-border: 222 30% 16%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+
+    /* Gradient */
+    --grad-from: 235 85% 60%;
+    --grad-to: 262 83% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+/* ── Sidebar nav ── */
+.sidebar-nav-item {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 cursor-pointer;
+  color: hsl(var(--sidebar-text));
+}
+.sidebar-nav-item:hover {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.9);
+}
+.sidebar-nav-item.active {
+  background: linear-gradient(135deg, hsl(var(--grad-from)/0.25), hsl(var(--grad-to)/0.15));
+  color: white;
+  border: 1px solid hsl(var(--grad-from)/0.3);
+}
+.sidebar-nav-item.active .nav-icon {
+  color: hsl(var(--grad-from));
+}
+
+/* ── Cards ── */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+}
+.card-glass {
+  @apply bg-white/70 backdrop-blur-sm border border-white/60 shadow-sm;
+}
+.card-gradient {
+  background: linear-gradient(135deg, hsl(var(--grad-from)), hsl(var(--grad-to)));
+}
+
+/* ── Status badges ── */
+.status-badge {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold;
+}
+
+/* ── Priority ── */
+.priority-urgente { @apply bg-orange-100 text-orange-700 border border-orange-200; }
+.priority-emergencial { @apply bg-red-100 text-red-700 border border-red-200; }
+.priority-normal { @apply bg-slate-100 text-slate-600 border border-slate-200; }
+
+/* ── Glow effects ── */
+.glow-primary {
+  box-shadow: 0 0 40px hsl(var(--primary)/0.15);
+}
+.glow-sm {
+  box-shadow: 0 0 20px hsl(var(--primary)/0.1);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 10px; }
+
+/* ── Animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 hsl(var(--primary)/0.4); }
+  70% { box-shadow: 0 0 0 8px hsl(var(--primary)/0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary)/0); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+
+/* ── Pending screen ── */
+.pending-bg {
+  background: radial-gradient(ellipse at 60% 30%, hsl(235 85% 10%), hsl(222 47% 6%) 70%);
+}
