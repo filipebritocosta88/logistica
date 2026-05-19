@@ -1,0 +1,51 @@
+{
+  "name": "PDV",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "complemento": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "responsavel_principal": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "bloco_id": {
+      "type": "string",
+      "description": "ID do bloco operacional ao qual o PDV pertence"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "nome",
+    "cidade"
+  ]
+}
